@@ -20,8 +20,9 @@ def find_palingrams(word_file: str) -> list[str]:
     """
     pali_list: list = []
     word_list = load(word_file)
+    words = set(word_list)
 
-    for word in word_list:
+    for word in words:
         word = word.strip('\n')
 
         end = len(word)
@@ -32,12 +33,12 @@ def find_palingrams(word_file: str) -> list[str]:
             for i in range(end):
                 # Now, run a conditional requiring the back end of the word to be palindromic 
                 # and the front end to be a reverse word in the word list (in other words, a “real” word)
-                if word[i:] == rev_word[:end - i] and rev_word[end - i:] in word_list:
+                if word[i:] == rev_word[:end - i] and rev_word[end - i:] in words:
                     pali_list.append((word, rev_word[end-i:]))
                 # have to repeat the conditional, but change the slicing direction 
                 # and word order to reverse the output. In other words, you must capture palindromic sequences
                 # at the start of the word rather than at the end
-                if word[:i] == rev_word[end - i:] and rev_word[:end - i] in word_list:
+                if word[:i] == rev_word[end - i:] and rev_word[:end - i] in words:
                     pali_list.append((rev_word[:end-i], word))
     return pali_list
 
