@@ -7,7 +7,8 @@ As I want to practice my test writing skills I have decided to impose some restr
     - This will also give me extra things to test.
 - Test for everything
     - Everything needs tests, after all this is the main point of me doing this.
-- All in NeoVim.
-    - I want to wean myself away from VsCode, so everything needs to be done in NeoVim.
+- All in Neovim.
+    - I want to wean myself away from VsCode, so everything needs to be done in Neovim.
+- Docker first development
 
 I had previously got to chapter 3, but I am aiming to start the whole thing again.
